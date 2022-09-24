@@ -32,14 +32,14 @@ func main() {
 
 	usersCollection = client.Database("db").Collection("users")
 
-	// insertOneUser()
-	// insertMultipleUser()
+	insertOneUser()
+	insertMultipleUser()
 	// findAllUsers()
 	// findUserById()
 
 	// filterUserByAge()
 	// deleteUserByAge()
-	// deleteAllUsers()
+	deleteAllUsers()
 	// deleteUserById()
 
 	// updateUserById()
@@ -167,7 +167,7 @@ func deleteUserByAge() {
 }
 
 func deleteAllUsers() {
-
+	// filter := bson.M{}
 	filter := bson.D{}
 	results, err := usersCollection.DeleteMany(context.TODO(), filter)
 	if err != nil {
